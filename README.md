@@ -7,13 +7,13 @@ Build
 Build from `Dockerfile`:
 
 ``` sh
-$ docker build -t neomen/drucheck:latest .
+docker build -t neomen/drucheck:latest .
 ```
 
 Verify build:
 
 ``` sh
-$ sudo docker run --rm -it neomen/drucheck:latest --version
+sudo docker run --rm -it neomen/drucheck:latest --version
 ```
 
 Usage
@@ -22,32 +22,32 @@ Usage
 1. Install the `neomen/drucheck:latest` container (optional - this step is performed by Docker automatically when running the container):
 
     ``` sh
-    $ docker pull neomen/drucheck:latest
+    docker pull neomen/drucheck:latest
     ```
 
 
 2. Define an bash alias that runs this container whenever `drucheck` is invoked on the command line:
 
 	``` sh
-	$ echo "alias drucheck='docker run --rm -it -v \$(pwd):/downloads/drupal/web/modules/custom/workspace neomen/drucheck:latest'" >> ~/.bashrc
-	$ source ~/.bashrc
+	echo "alias drucheck='docker run --rm -it -v \$(pwd):/downloads/drupal/web/modules/custom/workspace neomen/drucheck:latest'" >> ~/.bashrc
+	source ~/.bashrc
 	```
 
 
 3. Run drucheck as always:
 
 	``` sh
-	$ drucheck --version
+	drucheck --version
 	```
 
 4. In the folder with the Drupal module, run:
 
 	``` sh
-	$ drucheck
+	drucheck
 	```
 
 5. or directly through docker:
 
 	``` sh
-	$ docker run --rm -it -v $(pwd):/downloads/drupal/web/modules/custom/workspace neomen/drucheck:latest
+	docker run --rm -it -v $(pwd):/downloads/drupal/web/modules/custom/workspace neomen/drucheck:latest
 	```
